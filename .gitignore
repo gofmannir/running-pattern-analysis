@@ -1,0 +1,29 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+output*
+
+*.pt
+
+.mypy_cache
+.ruff_cache
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform.lock.hcl
+terraform/terraform.tfvars
+
+# Trained models (large files)
+trained_model/
+
+.DS_Store
