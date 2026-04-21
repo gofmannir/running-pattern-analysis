@@ -1,0 +1,60 @@
+[project]
+name = "rpa"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-cloud-storage>=3.7.0",
+    "jupyter>=1.1.1",
+    "lap>=0.5.12",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.7",
+    "mediapipe>=0.10.14",
+    "numpy>=2.3.3",
+    "opencv-python>=4.11.0.86",
+    "pandas>=2.3.3",
+    "pydantic>=2.12.5",
+    "seaborn>=0.13.2",
+    "torch>=2.8.0",
+    "transformers>=4.57.3",
+    "ultralytics>=8.3.214",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+rpa = "rpa.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rpa"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.18.2",
+    "playwright>=1.57.0",
+    "pytest-playwright>=0.7.2",
+    "ruff>=0.14.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+select = ["E", "F", "W", "I", "N", "UP", "ANN", "B", "A", "COM", "C4", "DTZ", "T10", "ISC", "ICN", "G", "PIE", "T20", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SIM", "TID", "ARG", "PTH", "ERA", "PD", "PGH", "PL", "TRY", "NPY", "RUF"]
+ignore = ["ANN401", "COM812", "ISC001"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
